@@ -2,7 +2,6 @@ import React from "react";
 import {withRouter} from "react-router-dom";
 
 class MyHeader extends React.Component {
-
     back = ()=>{
         this.props.history.goBack()
     }
