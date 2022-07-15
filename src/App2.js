@@ -1,11 +1,15 @@
-import React from "react";
+import React, {Component} from "react";
 import CountUI from "./containers/Count";
-import store from "./redux/store";
+import Person from "./containers/Person";
 
-export default class App2 extends React.Component {
+export default class App2 extends Component {
     render() {
         return (
-            <CountUI store={store}/>
+            <div>
+                <CountUI />
+                <hr/>
+                <Person />
+            </div>
         )
     }
 }
