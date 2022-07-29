@@ -17,11 +17,7 @@ function getStatistics (data){
 
 export default class App extends React.Component {
     state = {
-        listContent: [
-            {content: '睡觉', id: nanoid(), accomplish: true},
-            {content: '吃饭', id: nanoid(), accomplish: false},
-            {content: '学习', id: nanoid(), accomplish: false}
-        ],
+        listContent: JSON.parse(localStorage.getItem("List")),
         statistics: 0,
         statisticsAll: false,
     }
@@ -32,7 +28,7 @@ export default class App extends React.Component {
                 this.setState({statisticsAll:true})
             }
         })
-        console.log('sss')
+        // console.log('sss')
     }
 
     componentDidMount() {
@@ -102,7 +98,6 @@ export default class App extends React.Component {
             this.setState({statistics:num})
             const aaa = listContent.length ? listContent.every(item => item.accomplish === true) : false
             this.setState({statisticsAll:aaa})
-            console.log(this.state)
         })
     }
 
@@ -120,6 +115,36 @@ export default class App extends React.Component {
         }
     }
 
+    contentCompile = (list)=>{
+        const listContent = this.state.listContent
+        listContent.forEach((item)=>{
+            if (item.id === list.id){
+                item.content = list.content
+            }
+        })
+        const newList = [].concat(listContent)
+        this.setState({listContent: newList})
+    }
+
+    // sss = ()=>{
+    //     console.log('@sss')
+    // }
+
+    // ssss = ()=>{
+    //     this.sss()
+    //     const sss = this.sss
+    //     console.log(sss)
+    //     localStorage.setItem('List',JSON.stringify(this.state.listContent))
+    //     this.state.sss = 'sss'
+    //     console.log(this.state.sss)
+    //     console.log(this.state)
+    //     this.setState({sss:1},()=>console.log(this.state))
+    // }
+
+    // aaaa = ()=>{
+    //     console.log(this)
+    // }
+
     render() {
         const list = this.state.listContent
         // console.log('aaa',this.state.statistics)
@@ -128,9 +153,21 @@ export default class App extends React.Component {
             <div className="todo-container">
                 <div className="todo-wrap">
                     <Header />
-                    <MainList listContent={list} />
-                    <Footer deleteAll={this.deleteAll} list={list} num={list.length} statistics={this.state.statistics} statisticsAll={this.state.statisticsAll}/>
+                    {
+                        this.state.listContent.length ?
+                            <div>
+                                <MainList listContent={list} contentCompile={this.contentCompile}/>
+                                <Footer
+                                    deleteAll={this.deleteAll}
+                                    list={list} num={list.length}
+                                    statistics={this.state.statistics}
+                                    statisticsAll={this.state.statisticsAll}
+                                />
+                            </div> : <h3>请输入任务！</h3>
+                    }
                 </div>
+                {/*<button onClick={this.ssss}>点我</button>*/}
+                {/*<button onClick={this.aaaa}>点我1</button>*/}
             </div>
         );
     }

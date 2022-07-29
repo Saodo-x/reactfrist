@@ -1,6 +1,7 @@
 import React from "react";
 import Item from "../Item";
 import "./index.css"
+import {TransitionGroup, CSSTransition} from "react-transition-group";
 
 export default class MainList extends React.Component {
 
@@ -8,13 +9,17 @@ export default class MainList extends React.Component {
         const {listContent} = this.props
 
         return (
-            <ul className="todo-main">
-                {
-                    listContent.map((item)=>
-                        <Item key={item.id} id={item.id} list={item}/>
-                    )
-                }
-            </ul>
+                <ul className="todo-main">
+                    <TransitionGroup>
+                    {
+                        listContent.map((item)=>
+                            <CSSTransition key={item.id} timeout={500} classNames='item'>
+                                <Item key={item.id} id={item.id} list={item} contentCompile={this.props.contentCompile}/>
+                            </CSSTransition>
+                        )
+                    }
+                    </TransitionGroup>
+                </ul>
         )
     }
 }

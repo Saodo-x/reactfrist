@@ -1,5 +1,5 @@
 import React from "react";
-import {Link,Route, Switch} from "react-router-dom";
+import {Link, Route, Switch} from "react-router-dom";
 import Detail from "./Detail";
 
 export default class Message extends React.Component {
@@ -11,29 +11,30 @@ export default class Message extends React.Component {
         ]
     }
 
-    replaceShow = (id,title)=>{
+    replaceShow = (id,title) => {
         this.props.history.replace({
             pathname:'/home/message/detail',
             state:{id:id,title:title}
         })
     }
 
-    pushShow = (id,title)=>{
+    pushShow = (id,title) => {
+        console.log(this.props)
         this.props.history.push({
-            pathname:'/home/message/detail',
-            state:{id:id,title:title}
+            pathname: '/home/message/detail',
+            state:{id: id, title: title}
         })
     }
 
-    back = ()=>{
+    back = () => {
         this.props.history.goBack()
     }
 
-    forward = ()=>{
+    forward = () => {
         this.props.history.goForward()
     }
 
-    Go = ()=>{
+    Go = () => {
         this.props.history.go(2)
     }
 
@@ -47,9 +48,9 @@ export default class Message extends React.Component {
                             <li key={item.id}>
                                 {/*<Link to={`/home/message/detail/${item.id}/${item.title}`}>{item.title}</Link>&nbsp;&nbsp;*/}
                                 {/*<Link to={`/home/message/detail/?id=${item.id}&title=${item.title}`}>{item.title}</Link>&nbsp;&nbsp;*/}
-                                <Link to={{pathname:'/home/message/detail',state:{id:item.id,title:item.title}}}>{item.title}</Link>&nbsp;&nbsp;
-                                <button onClick={()=>this.pushShow(item.id,item.title)}>push</button>
-                                <button onClick={()=>this.replaceShow(item.id,item.title)}>replace</button>
+                                <Link to={{pathname: '/home/message/detail',state: {id: item.id, title: item.title}}}>{item.title}</Link>&nbsp;&nbsp;
+                                <button onClick={() => this.pushShow(item.id,item.title)}>push</button>
+                                <button onClick={() => this.replaceShow(item.id,item.title)}>replace</button>
                             </li>
                         )
                     }

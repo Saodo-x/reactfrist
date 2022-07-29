@@ -3,16 +3,23 @@ import {nanoid} from "nanoid";
 import {connect} from "react-redux";
 import {createAddPerson} from "../../redux/action/person";
 
-
-
 class Person extends Component {
     addPerson = ()=>{
         const name = this.nameNode.value
         const age = this.ageNode.value
         const personObj = {id:nanoid(),name:name,age:age}
-        this.props.addList(personObj)
+        const judgeNum = /\d/g
+        const judgeStr = /^[a-zA-Z]+$/g
+        if (judgeStr.test(personObj.name)){
+            if (judgeNum.test(personObj.age)){
+                this.props.addList(personObj)
+            }else {
+                alert("请输入正常年龄！")
+            }
+        }else {
+            alert("请输入正常姓名！")
+        }
     }
-
     render() {
         return(
             <div>
@@ -32,7 +39,6 @@ class Person extends Component {
         )
     }
 }
-
 export default connect(
     state =>({
         personList:state.rens,

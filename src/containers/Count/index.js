@@ -10,6 +10,7 @@ class Count extends React.Component {
     increment = ()=>{
         const {value} = this.selectNumber
         this.props.jia(value-0)
+        console.log(this,'ss',this.props)
     }
 
     decrement = ()=>{

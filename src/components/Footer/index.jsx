@@ -19,7 +19,8 @@ export default class Footer extends React.Component {
     }
 
     delete = ()=>{
-        const lists = this.props.list.filter((item)=>{
+        const list = this.props.list
+        const lists = list.filter((item)=>{
             return item.accomplish ===  false
         })
         this.props.deleteAll(lists)

@@ -8,8 +8,8 @@ export default class Header extends React.Component {
     }
     myRef1 = null
 
-    changeTxt = ()=>{
-        const txt = this.myRef1.value
+    changeTxt = (e)=>{
+        const txt = e.target.value
         this.setState({inputTxt:txt})
     }
 
