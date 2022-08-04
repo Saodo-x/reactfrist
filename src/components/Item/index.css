@@ -9,6 +9,10 @@ li {
 li label {
     float: left;
     cursor: pointer;
+    overflow: hidden;
+    width: 60%;
+    height: 2.25rem;
+    /*text-overflow: ellipsis;*/
 }
 
 li label li input {

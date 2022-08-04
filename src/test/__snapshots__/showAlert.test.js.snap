@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShowAlert组件测试 should ShowAlert test 1`] = `
+<div
+  className="Alert-main"
+>
+  <div
+    className="Alert-back"
+  />
+  <div
+    className="Alert-cont"
+  >
+    <div
+      className="Alert-cont-flex"
+    >
+      <div
+        className=""
+      >
+        <div
+          className="Alert-title"
+        >
+          提示
+        </div>
+      </div>
+      <div
+        className="Alert-content"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "哈哈哈哈哈",
+          }
+        }
+      />
+      <div
+        className="Alert-button x-layout-box"
+      >
+        <div
+          className="app-btn-cancel x-flex-one orange"
+          onClick={[Function]}
+        >
+          知道了
+        </div>
+        <div
+          className="app-btn-cancel x-flex-one orange"
+          onClick={[Function]}
+        >
+          修改
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ShowAlert组件测试 should ShowAlert test 2`] = `
+<div
+  className="Alert-main"
+>
+  <div
+    className="Alert-back"
+  />
+  <div
+    className="Alert-cont"
+  >
+    <div
+      className="Alert-cont-flex"
+    >
+      <div
+        className="AlertInput"
+      >
+        <input
+          className="Alert-input"
+          onChange={[Function]}
+          type="text"
+          value="提示"
+        />
+      </div>
+      <textarea
+        onChange={[Function]}
+        value="哈哈哈哈哈"
+      />
+      <div
+        className="Alert-button x-layout-box"
+      >
+        <div
+          className="app-btn-cancel x-flex-one orange"
+          onClick={[Function]}
+        >
+          确定
+        </div>
+        <div
+          className="app-btn-cancel x-flex-one orange"
+          onClick={[Function]}
+        >
+          取消
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

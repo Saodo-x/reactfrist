@@ -1,0 +1,128 @@
+.Alert-main{
+  /*width: 100%;*/
+  /*height: 100vh;*/
+}
+
+.Alert-main .Alert-back{
+  z-index: 30;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all linear 1000ms;
+}
+
+.Alert-main .Alert-cont{
+  position: fixed;
+  z-index: 31;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Alert-main .Alert-cont .Alert-cont-flex{
+  min-height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25%;
+  background: #ffffff;
+  border-radius: 0.45rem;
+}
+
+.Alert-main .Alert-cont .Alert-cont-flex .Alert-title{
+  padding-top: 0.26rem;
+  padding-bottom: 0.36rem;
+  margin: 0 0.75rem;
+  border-bottom: 1px solid #f2f2f2;
+  font-family: PingFangSC-Regular;
+  font-size: 1.5rem;
+  color: #000000;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.Alert-main .Alert-cont .Alert-cont-flex .Alert-content{
+  color: #444;
+  margin: 0 0.81rem;
+  padding: 0.32rem 0.75rem;
+  font-family: PingFangSC-Regular;
+  font-size: 1.5rem;
+  color: #333333;
+  word-break: break-all;
+  text-align: center;
+}
+
+.Alert-main .Alert-cont .Alert-cont-flex .x-layout-box{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Alert-main .Alert-cont .Alert-cont-flex .x-layout-box .x-flex-one{
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border-right: 1px solid #ededed
+}
+
+.x-flex-one:last-child{
+  border-right: none;
+}
+
+.Alert-main .Alert-cont .Alert-cont-flex .Alert-button{
+  border-top: 1px solid #ededed;
+}
+
+.Alert-main .Alert-cont .Alert-cont-flex .Alert-button .app-btn-cancel{
+  padding: 0.27rem 0;
+  font-family: PingFangSC-Medium;
+  font-size: 1.4rem;
+  color: #9b9b9b;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.Alert-main .orange{
+  color: #4a98ff !important;
+}
+
+.Alert-main .Alert-cont .Alert-cont-flex .Alert-people{
+  padding-top: 0.26rem;
+  padding-bottom: 0.36rem;
+  margin: 0 0.75rem;
+  border-bottom: 1px solid #f2f2f2;
+  font-family: PingFangSC-Regular, sans-serif;
+  font-size: 1.1rem;
+  color: #000000;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+textarea{
+  height: 6rem;
+  width: 90%;
+  margin: auto;
+}
+
+.AlertInput{
+  display: flex;
+  flex-direction: column;
+  height: 4rem;
+  justify-content: space-around;
+}
+
+.Alert-input{
+  width: 85%;
+  margin: 0 auto;
+}
